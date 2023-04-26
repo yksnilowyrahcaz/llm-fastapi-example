@@ -6,6 +6,8 @@ Create API endpoints for question answering and sentiment analysis
 <img src="images/llama.jpg" width=600>
 <p/>
 
+Photo: Shutterstock
+
 ## Table of Contents
 1. [File Descriptions](#files)
 2. [Supporting Packages](#packages)
