@@ -1,0 +1,7 @@
+fastapi
+llama-index
+safetensors
+sentence-transformers
+torch
+transformers
+uvicorn[standard]
