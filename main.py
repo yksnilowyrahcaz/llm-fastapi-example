@@ -5,6 +5,9 @@ from pydantic import BaseModel
 class QARequest(BaseModel):
     question: str
 
+class QAResponse(BaseModel):
+    answer: str
+
 class SentimentRequest(BaseModel):
     text: str
 
@@ -14,10 +17,10 @@ class SentimentResponse(BaseModel):
 
 app = FastAPI()
 
-@app.post('/question-answering')
+@app.post('/question-answering', response_model=QAResponse)
 def query(query: QARequest):
     data = query.dict()
-    return query_index(data['question'])
+    return {'answer': query_index(data['question'])}
 
 @app.post('/sentiment-analysis', response_model=SentimentResponse)
 def query(query: SentimentRequest):
