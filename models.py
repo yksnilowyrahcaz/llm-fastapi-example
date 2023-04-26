@@ -10,15 +10,15 @@ from transformers import (
     AutoModelForQuestionAnswering,
     AutoModelForSequenceClassification
 )
-
-sa_tokenizer = AutoTokenizer.from_pretrained('distilbert')
-sa_model = AutoModelForSequenceClassification.from_pretrained('distilbert')
+sa_model_name = 'distilbert-base-uncased-finetuned-sst-2-english'
+sa_tokenizer = AutoTokenizer.from_pretrained(sa_model_name)
+sa_model = AutoModelForSequenceClassification.from_pretrained(sa_model_name)
 sa_pipeline = pipeline(task='sentiment-analysis', model=sa_model, tokenizer=sa_tokenizer)
 
 class CustomLLM(LLM):
-    model_name = 'tinyroberta'
-    qa_tokenizer = AutoTokenizer.from_pretrained(model_name)
-    qa_model = AutoModelForQuestionAnswering.from_pretrained(model_name)
+    qa_model_name = 'deepset/tinyroberta-squad2'
+    qa_tokenizer = AutoTokenizer.from_pretrained(qa_model_name)
+    qa_model = AutoModelForQuestionAnswering.from_pretrained(qa_model_name)
     qa_pipeline = pipeline(task='question-answering', model=qa_model, tokenizer=qa_tokenizer)
 
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
@@ -27,7 +27,7 @@ class CustomLLM(LLM):
 
     @property
     def _identifying_params(self) -> Mapping[str, Any]:
-        return {'name_of_model': self.model_name}
+        return {'name_of_model': self.qa_model_name}
 
     @property
     def _llm_type(self) -> str:
@@ -44,7 +44,7 @@ service_context = ServiceContext.from_defaults(
     embed_model=embed_model
 )
 
-# Load the data
+############### Uncomment this section to create new index ###############
 # with open('data/_coltrane.txt', 'rb') as f:
 #     text = f.read().decode('utf-8')
 # documents = [Document(sentence) for sentence in text.split('.')]
@@ -54,10 +54,12 @@ service_context = ServiceContext.from_defaults(
 # )
 # index.save_to_disk('data/index.json')
 
+############# Comment out this block if using existing index #############
 index = GPTSimpleVectorIndex.load_from_disk(
     save_path='data/index.json',
     service_context=service_context
 )
+##########################################################################
 
 def query_index(query: str) -> str:
     response = index.query(

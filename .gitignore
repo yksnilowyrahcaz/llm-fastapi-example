@@ -144,5 +144,5 @@ dmypy.json
 cython_debug/
 
 # tranformer model files
-distilbert
-tinyroberta
+deepset
+distilbert-base-uncased-finetuned-sst-2-english
