@@ -1,6 +1,6 @@
 # llm-fastapi-example
 
-Create API endpoints for question answering and sentiment analysis
+Create API endpoints for question answering and sentiment analysis.
 
 <p align="center">
 <img src="images/llama.jpg" width=600>
@@ -38,26 +38,26 @@ In addition to the standard python library, this analysis utilizes the following
 - [Transformers](https://pypi.org/project/transformers/)
 - [Uvicorn](https://www.uvicorn.org/)
 
-Please see `requirements.txt` for a complete list of packages and dependencies used in the making of this project
+Please see `requirements.txt` for a complete list of packages and dependencies used in the making of this project.
 
 ## How To Use This Repository <a name="howto"></a>
 1. Clone the repo locally or download and unzip this repository to a local machine.
 2. Navigate to this directory and open the command line. For the purposes of running the scripts, this will be the root directory.
-3. Create a virtual environment to store the supporting packages
+3. Create a virtual environment to store the supporting packages.
 
         python -m venv venv --upgrade-deps
 
-4. Activate the virtual environment
+4. Activate the virtual environment.
 
         venv\scripts\activate
 
-5. Install the supporting packages from the requirements.txt file
+5. Install the supporting packages from the requirements.txt file.
 
         pip install -r requirements.txt
         
 6. Run "uvicorn main:app --reload"
 
-7. Open up a browser and go to 127.0.0.1:8000/docs and try out the two endpoints
+7. Open up a browser and go to 127.0.0.1:8000/docs and try out the two endpoints.
        
 Note: if you do not have the hugging face models already, they will be downloaded and cached on your machine in the `C:\Users\USEDID\.cache` folder
 
@@ -68,7 +68,7 @@ It is interesting to consider indexing a corpus with sentence embeddings and usi
  See [John Coltrane Wikipedia page](https://en.wikipedia.org/wiki/John_Coltrane).
 
 ## Acknowledgements <a name="acknowledgements"></a>
-Thanks to the Llama-index and Hugging Face teams for sharing their work
+Thanks to the developers who created the foundations for this example.
 
 ## License & copyright <a name="license"></a>
 © Zachary Wolinsky 2023
