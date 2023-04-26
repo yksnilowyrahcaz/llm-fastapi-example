@@ -54,7 +54,7 @@ service_context = ServiceContext.from_defaults(
 # )
 # index.save_to_disk('data/index.json')
 
-############# Comment out this block if using existing index #############
+############# Uncomment this section if using existing index #############
 index = GPTSimpleVectorIndex.load_from_disk(
     save_path='data/index.json',
     service_context=service_context
