@@ -45,7 +45,7 @@ service_context = ServiceContext.from_defaults(
 )
 
 ############### Uncomment this section to create new index ###############
-# with open('data/_coltrane.txt', 'rb') as f:
+# with open('data/coltrane.txt', 'rb') as f:
 #     text = f.read().decode('utf-8')
 # documents = [Document(sentence) for sentence in text.split('.')]
 # index = GPTSimpleVectorIndex.from_documents(
