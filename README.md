@@ -31,7 +31,7 @@ Photo: Shutterstock
 ## Supporting Packages <a name="packages"></a>
 In addition to the standard python library, this analysis utilizes the following packages:
 - [FastAPI](https://fastapi.tiangolo.com/)
-- [LlamaIndexllama](https://gpt-index.readthedocs.io/en/latest/index.html)
+- [LlamaIndex](https://gpt-index.readthedocs.io/en/latest/index.html)
 - [safetensors](https://github.com/huggingface/safetensors)
 - [SentenceTransformers](https://www.sbert.net/)
 - [PyTorch](https://pytorch.org/)
