@@ -14,9 +14,8 @@ Photo: Shutterstock
 3. [How To Use This Repository](#howto)
 4. [Project Motivation](#motivation)
 5. [About The Dataset](#data)
-6. [Results](#results)
-7. [Acknowledgements](#acknowledgements)
-8. [Licence & copyright](#license)
+6. [Acknowledgements](#acknowledgements)
+7. [Licence & copyright](#license)
 
 ## File Descriptions <a name="files"></a>
 | File | Description |
